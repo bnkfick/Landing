@@ -54,6 +54,7 @@ body {
   }
   
   .content .text {
+    font-size: 1.2rem;
     line-height: 1.7;
     margin-top: 1rem;
   }
@@ -92,16 +93,7 @@ body {
     color: #f4f4f4;
   }
   
-  .linkedin-icon {
-    text-decoration: none;
-    color: #fff;
-    -webkit-transition: 0.5s ease-out;
-    -moz-transition:  0.5s ease-out;
-    transition:  0.5s ease-out;
-  }
-
-  
-  .git-icon {
+  .icon {
     text-decoration: none;
     color: #fff;
     -webkit-transition: 0.5s ease-out;
@@ -111,10 +103,18 @@ body {
   
   .git-icon:hover {
     text-decoration: none;
-    color: #2c7df7;
     -webkit-transform: rotateZ(360deg);
     -moz-transform: rotateZ(360deg);
     transform: rotateZ(360deg);
+  }
+  .icon:hover, .git-icon:hover {
+    color: #2c7df7;
+  }
+  .portrait {
+      position: relative;
+      top: 0;
+    text-align: center;
+    margin-top: 20px;
   }
 
   footer {
