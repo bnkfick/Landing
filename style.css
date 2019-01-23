@@ -14,19 +14,19 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     display: block;
-    filter: blur(10px);
-    -webkit-filter: blur(10px);
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
     transition: all 1000ms;
   }
   
   .showcase:hover::after {
-    filter: blur(0px);
-    -webkit-filter: blur(0px);
+    filter: blur(0);
+    -webkit-filter: blur(0);
   }
   
   .showcase:hover .content {
-    filter: blur(2px);
-    -webkit-filter: blur(2px);
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
   }
   
   .content {
@@ -40,7 +40,7 @@ body {
     height: 350px;
     color: #0F224E;
     text-align: center;
-    transition: all 1000ms;
+    transition: all 2000ms;
   }
   
   .content .logo {
@@ -50,9 +50,19 @@ body {
   
   .content .title {
     font-size: 2.2rem;
+    letter-spacing: 0.1rem; 
     margin-top: 1rem;
+    margin-bottom: 1rem;
   }
   
+  .content .sub {
+    font-size: 1.4rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-family: 'Bookman Old Style';
+    font-style: italic;
+    letter-spacing: 0.2rem; 
+  }
   .content .text {
     font-size: 1.2rem;
     line-height: 1.7;
@@ -66,7 +76,24 @@ body {
     padding: 4rem 1rem;
   }
   
-  .grid-3 {
+  .circle {
+    display: block;
+    margin: 1em auto;
+    font-size: 2.2rem;
+    letter-spacing: 0.1rem; 
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-border-radius: 99em;
+    -moz-border-radius: 99em;
+    border-radius: 99em;
+    border: 2px solid #eee;
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);  
+  }
+
+  .grid-4 {
     display: grid;
     grid-gap: 20px;
     grid-template-columns: repeat(4, 1fr);
@@ -75,7 +102,7 @@ body {
   .grid-2 {
     display: grid;
     grid-gap: 20px;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 2fr;
   }
   
   .center {
@@ -93,7 +120,7 @@ body {
     color: #f4f4f4;
   }
   
-  .icon {
+  .link {
     text-decoration: none;
     color: #fff;
     -webkit-transition: 0.5s ease-out;
@@ -101,20 +128,34 @@ body {
     transition:  0.5s ease-out;
   }
   
+  .link:hover, 
+  .git-icon:hover {
+    color: #2c7df7;
+  }
+
   .git-icon:hover {
     text-decoration: none;
     -webkit-transform: rotateZ(360deg);
     -moz-transform: rotateZ(360deg);
     transform: rotateZ(360deg);
   }
-  .icon:hover, .git-icon:hover {
-    color: #2c7df7;
-  }
+
   .portrait {
-      position: relative;
-      top: 0;
     text-align: center;
     margin-top: 20px;
+    transition: transform .4s; 
+  }
+
+  .portrait:hover {
+    transform: scale(1.04); 
+  }
+  
+  .portrait img {
+    width: 288px;
+  }
+
+  .about {
+    color: #0F224E;
   }
 
   footer {
@@ -141,16 +182,17 @@ body {
       width: 140px;
     }
   
-    .content .text {
+    .content .text,
+    .portrait {
       display: none;
     }
   
-    .grid-3,
+    .grid-4,
     .grid-2 {
       grid-template-columns: 1fr;
     }
   
-    .services div {
+    .links div {
       border-bottom: #333 dashed 1px;
       padding: 1.2rem 1rem;
     }
@@ -158,13 +200,16 @@ body {
   
   /* Landscape */
   @media (max-height: 500px) {
-    .content .title,
-    .content .text {
+    .content .sub,
+    .content .text
+    {
       display: none;
     }
   
     .content {
       top: 0;
+      margin-top: 10px;
     }
+
   }
   
